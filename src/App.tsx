@@ -25,6 +25,18 @@ const Theme = () => {
             marginTop: '2rem',
             marginBottom: '0.5rem',
           },
+
+          '#root': {
+            width: '100dw',
+            height: '100dvh',
+            minWidth: '320px',
+            minHeight: '615px',
+            position: 'relative',
+            '@media(min-width: 375px)': {
+              minWidth: '382px',
+              minHeight: '650px',
+            },
+          },
         },
       }}
     />
@@ -33,19 +45,25 @@ const Theme = () => {
 
 const styles = {
   card: css({
-    position: 'fixed',
-    inset: '0px',
-    maxWidth: '100vw',
-    maxHeight: '100dvh',
-    margin: 'auto',
+    position: 'absolute',
+    overflow: 'scroll',
+    inset: '0',
+    minWidth: '320px',
+    minHeight: '580px',
     width: '330px',
     height: '580px',
+    margin: 'auto',
     borderRadius: '1rem',
     backgroundColor: 'var(--colors-darkgrey)',
 
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
+
+    '@media(min-width: 375px)': {
+      width: '382px',
+      height: '615px',
+    },
   }),
 
   profile: css({
@@ -53,7 +71,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    marginTop: '2rem',
+    marginTop: '2rem 1rem 0 1rem',
 
     'div:has(>img)': {
       position: 'relative',
@@ -98,6 +116,10 @@ const styles = {
     textAlign: 'center',
     fontWeight: '600',
     margin: '1rem',
+
+    '@media(min-width: 375px)': {
+      margin: '1rem 2rem',
+    },
 
     ul: {
       listStyle: 'none',
