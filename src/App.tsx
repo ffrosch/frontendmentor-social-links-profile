@@ -1,4 +1,5 @@
 import { css, Global } from '@emotion/react';
+import avatar from '/assets/images/avatar-jessica.jpeg';
 
 const Theme = () => {
   return (
@@ -178,7 +179,7 @@ function App() {
         <section css={styles.profile}>
           <div>
             <img
-              src='/assets/images/avatar-jessica.jpeg'
+              src={avatar}
               alt='Profile Picture of Jessica Randall'
               width='86px'
               height='86px'
