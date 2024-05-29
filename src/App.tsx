@@ -1,6 +1,19 @@
 import { css, Global } from '@emotion/react';
 import avatar from '/assets/images/avatar-jessica.jpeg';
 
+const theme = {
+  colors: {
+    primary: 'var(--colors-primary)',
+    white: 'var(--colors-white)',
+    grey: 'var(--colors-grey)',
+    darkgrey: 'var(--colors-darkgrey)',
+    black: 'var(--colors-black)',
+  },
+  fontSize: {
+    sm: 'var(--font-size-sm)',
+  },
+};
+
 const Theme = () => {
   return (
     <Global
@@ -14,9 +27,9 @@ const Theme = () => {
           '--font-size-sm': '14px',
 
           fontFamily: 'Inter, sans-serif',
-          fontSize: 'var(--font-size-sm)',
-          color: 'var(--colors-white)',
-          backgroundColor: 'var(--colors-black)',
+          fontSize: theme.fontSize.sm,
+          color: theme.colors.white,
+          backgroundColor: theme.colors.black,
 
           h1: {
             fontWeight: 600,
@@ -59,7 +72,7 @@ const styles = {
     height: '580px',
     margin: 'auto',
     borderRadius: '1rem',
-    backgroundColor: 'var(--colors-darkgrey)',
+    backgroundColor: theme.colors.darkgrey,
 
     display: 'flex',
     flexDirection: 'column',
@@ -93,7 +106,7 @@ const styles = {
         width: '100%',
         height: '100%',
         borderRadius: '50%',
-        backgroundColor: 'var(--colors-primary)',
+        backgroundColor: theme.colors.primary,
         transition: '.5s',
         transform: 'scale(.9)',
         zIndex: '-1',
@@ -104,7 +117,7 @@ const styles = {
         filter: 'brightness(120%)',
         ':before': {
           transform: 'scale(1.1)',
-          boxShadow: '0 0 8px var(--colors-primary)',
+          boxShadow: `0 0 8px ${theme.colors.primary}`,
           filter: 'blur(3px)',
         },
       },
@@ -137,16 +150,16 @@ const styles = {
         padding: '0.9rem',
         margin: '0.9rem',
         borderRadius: '0.5rem',
-        backgroundColor: 'var(--colors-grey)',
+        backgroundColor: theme.colors.grey,
         cursor: 'pointer',
         userSelect: 'none',
-        color: 'var(--colors-white)',
+        color: theme.colors.white,
         transition: 'all 0.5s ease',
         transitionTimingFunction: 'cubic-bezier(.65,.22,.47,1.14)',
 
         ':hover,:focus,:active': {
-          backgroundColor: 'var(--colors-primary)',
-          color: 'var(--colors-black)',
+          backgroundColor: theme.colors.primary,
+          color: theme.colors.black,
         },
 
         a: {
@@ -158,7 +171,7 @@ const styles = {
   }),
 
   highlight: css({
-    color: 'var(--colors-primary)',
+    color: theme.colors.primary,
     fontWeight: '700',
   }),
 
