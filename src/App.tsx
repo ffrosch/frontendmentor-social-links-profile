@@ -4,7 +4,28 @@ const Theme = () => {
   return (
     <Global
       styles={{
-        html: {},
+        html: {
+          '--sm': '375px',
+          '--colors-primary': 'hsl(75, 94%, 57%)',
+          '--colors-white': 'hsl(0, 0%, 100%)',
+          '--colors-grey': 'hsl(0, 0%, 20%)',
+          '--colors-darkgrey': 'hsl(0, 0%, 12%)',
+          '--colors-black': 'hsl(0, 0%, 8%)',
+          '--font-size-sm': '14px',
+
+          fontFamily: 'Inter, sans-serif',
+          fontSize: 'var(--font-size-sm)',
+          color: 'var(--colors-white)',
+          backgroundColor: 'var(--colors-black)',
+
+          h1: {
+            fontWeight: 600,
+            fontSize: '1.8rem',
+            letterSpacing: '-0.75px',
+            marginTop: '2rem',
+            marginBottom: '0.5rem',
+          },
+        },
       }}
     />
   );
@@ -17,8 +38,10 @@ const styles = {
     maxWidth: '100vw',
     maxHeight: '100dvh',
     margin: 'auto',
-    width: '350px',
-    height: '600px',
+    width: '330px',
+    height: '580px',
+    borderRadius: '1rem',
+    backgroundColor: 'var(--colors-darkgrey)',
 
     display: 'flex',
     flexDirection: 'column',
@@ -30,31 +53,43 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
+    marginTop: '2rem',
 
     img: {
       borderRadius: '50%',
+    },
+
+    '& p:last-child': {
+      marginTop: '1.8rem',
     },
   }),
 
   links: css({
     textAlign: 'center',
+    fontWeight: '600',
+    margin: '1rem',
 
     ul: {
       listStyle: 'none',
       paddingInlineStart: 0,
 
       li: {
-        padding: '0.5rem',
-        margin: '1rem',
+        padding: '0.9rem',
+        margin: '0.9rem',
         borderRadius: '0.5rem',
-        backgroundColor: 'darkgrey',
+        backgroundColor: 'var(--colors-grey)',
 
         a: {
           textDecoration: 'none',
-          color: 'white',
+          color: 'var(--colors-white)',
         },
       },
     },
+  }),
+
+  highlight: css({
+    color: 'var(--colors-primary)',
+    fontWeight: '700',
   }),
 };
 
@@ -67,11 +102,11 @@ function App() {
           <img
             src='/assets/images/avatar-jessica.jpeg'
             alt='Profile Picture of Jessica Randall'
-            width='72px'
-            height='72px'
+            width='86px'
+            height='86px'
           />
           <h1>Jessica Randall</h1>
-          <p>London, United Kingdom</p>
+          <p css={styles.highlight}>London, United Kingdom</p>
           <p>"Front-end developer and avid reader."</p>
         </section>
         <section css={styles.links}>
