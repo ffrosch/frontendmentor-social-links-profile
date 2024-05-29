@@ -78,10 +78,20 @@ const styles = {
         margin: '0.9rem',
         borderRadius: '0.5rem',
         backgroundColor: 'var(--colors-grey)',
+        cursor: 'pointer',
+        userSelect: 'none',
+        color: 'var(--colors-white)',
+        transition: 'all 0.5s ease',
+        transitionTimingFunction: 'cubic-bezier(.65,.22,.47,1.14)',
+
+        ':hover,:focus,:active': {
+          backgroundColor: 'var(--colors-primary)',
+          color: 'var(--colors-black)',
+        },
 
         a: {
           textDecoration: 'none',
-          color: 'var(--colors-white)',
+          color: 'inherit',
         },
       },
     },
