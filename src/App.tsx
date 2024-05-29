@@ -55,7 +55,37 @@ const styles = {
     alignItems: 'center',
     marginTop: '2rem',
 
+    'div:has(>img)': {
+      position: 'relative',
+      transition: '.5s',
+
+      ':before': {
+        content: '""',
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        borderRadius: '50%',
+        backgroundColor: 'var(--colors-primary)',
+        transition: '.5s',
+        transform: 'scale(.9)',
+        zIndex: '-1',
+        border: 'red',
+      },
+
+      ':hover': {
+        filter: 'brightness(120%)',
+        ':before': {
+          transform: 'scale(1.1)',
+          boxShadow: '0 0 8px var(--colors-primary)',
+          filter: 'blur(3px)',
+        },
+      },
+    },
+
     img: {
+      position: 'relative',
       borderRadius: '50%',
     },
 
@@ -109,12 +139,14 @@ function App() {
       <Theme />
       <main css={styles.card}>
         <section css={styles.profile}>
-          <img
-            src='/assets/images/avatar-jessica.jpeg'
-            alt='Profile Picture of Jessica Randall'
-            width='86px'
-            height='86px'
-          />
+          <div>
+            <img
+              src='/assets/images/avatar-jessica.jpeg'
+              alt='Profile Picture of Jessica Randall'
+              width='86px'
+              height='86px'
+            />
+          </div>
           <h1>Jessica Randall</h1>
           <p css={styles.highlight}>London, United Kingdom</p>
           <p>"Front-end developer and avid reader."</p>
