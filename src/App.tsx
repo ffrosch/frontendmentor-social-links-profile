@@ -5,7 +5,6 @@ const Theme = () => {
     <Global
       styles={{
         html: {
-          '--sm': '375px',
           '--colors-primary': 'hsl(75, 94%, 57%)',
           '--colors-white': 'hsl(0, 0%, 100%)',
           '--colors-grey': 'hsl(0, 0%, 20%)',
@@ -30,11 +29,16 @@ const Theme = () => {
             width: '100dw',
             height: '100dvh',
             minWidth: '320px',
-            minHeight: '615px',
+            minHeight: '650px',
             position: 'relative',
+
+            display: 'flex',
+            flexDirection: 'column',
+            alignContent: 'end',
+
             '@media(min-width: 375px)': {
               minWidth: '382px',
-              minHeight: '650px',
+              minHeight: '670px',
             },
           },
         },
@@ -63,6 +67,9 @@ const styles = {
     '@media(min-width: 375px)': {
       width: '382px',
       height: '615px',
+    },
+    '@media(max-height: 650px)': {
+      marginTop: '1rem',
     },
   }),
 
@@ -153,6 +160,14 @@ const styles = {
     color: 'var(--colors-primary)',
     fontWeight: '700',
   }),
+
+  footer: css({
+    textAlign: 'center',
+    marginTop: 'auto',
+    marginBottom: '1rem',
+
+    a: { color: 'grey' },
+  }),
 };
 
 function App() {
@@ -193,6 +208,29 @@ function App() {
           </ul>
         </section>
       </main>
+
+      <footer
+        role='contentinfo'
+        css={styles.footer}
+      >
+        Challenge by{' '}
+        <a
+          href='https://www.frontendmentor.io?ref=challenge'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Frontend Mentor
+        </a>
+        . Coded by{' '}
+        <a
+          href='https://florianfrosch.de'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Florian Frosch
+        </a>
+        .
+      </footer>
     </>
   );
 }
