@@ -64,7 +64,7 @@ const Theme = () => {
 const styles = {
   card: css({
     position: 'absolute',
-    overflow: 'scroll',
+    overflow: 'auto',
     inset: '0',
     minWidth: '320px',
     minHeight: '580px',
